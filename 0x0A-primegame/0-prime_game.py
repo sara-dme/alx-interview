@@ -9,7 +9,8 @@ def is_prime(n):
         if not n % i:
             return False
     return True
-    
+
+
 def calc_prime(n, primes):
     """ claculate primes """
     top = primes[-1]
@@ -20,6 +21,7 @@ def calc_prime(n, primes):
             else:
                 primes.append(0)
 
+
 def isWinner(n, numbers):
     """return the name of the winner"""
     players = {"Maria": 0, "Ben": 0}
@@ -28,8 +30,8 @@ def isWinner(n, numbers):
 
     for round in range(n):
         somme = sum((i != 0 and i <= numbers[round])
-                for i in primes[:numbers[round] + 1])
-        
+                    for i in primes[:numbers[round] + 1])
+
         if (somme % 2):
             win = "Maria"
         else:
@@ -41,5 +43,5 @@ def isWinner(n, numbers):
         return "Maria"
     elif players["Ben"] > players["Maria"]:
         return "Ben"
-        
+
     return None
